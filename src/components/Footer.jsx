@@ -3,21 +3,22 @@ import { ImFacebook, ImInstagram, ImTwitter, ImGithub } from "react-icons/im";
 import styles from './Header.module.css'
 
 const Footer = () => {
+  console.log(ImFacebook)
   return (
     <footer>
       <div>
         <h5>Hit us up on our socials!</h5>
-        <div>
-          <a href="https://www.devmountain.com" target="_blank">
+        <div className={styles.social_container}>
+          <a href="https://www.devmountain.com" target="_blank" className={styles.circle}>
             <ImFacebook size="1.5em" color="#3f3f3f" />
           </a>
-          <a href="https://www.devmountain.com" target="_blank">
+          <a href="https://www.devmountain.com" target="_blank" className={styles.circle}>
             <ImInstagram size="1.5em" color="#3f3f3f" />
           </a>
-          <a href="https://www.devmountain.com" target="_blank">
+          <a href="https://www.devmountain.com" target="_blank" className={styles.circle}>
             <ImTwitter size="1.5em" color="#3f3f3f" />
           </a>
-          <a href="https://www.devmountain.com" target="_blank">
+          <a href="https://www.devmountain.com" target="_blank" className={styles.circle}>
             <ImGithub size="1.5em" color="#3f3f3f" />
           </a>
         </div>

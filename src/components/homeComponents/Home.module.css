@@ -21,13 +21,14 @@
 
 
 h1 {
-    --color: hsl(var(--primary-color), var(--1));
+    /* --color: hsl(var(--primary-color), var(--1)); */
     font-size: 64px;
-    color: var(--color);
+    /* color: var(--color); */
+    color: #FF8B13;
 }
 
 h2{
-    color: black;
+    color: white;
     font-size: 36px;
 }
 

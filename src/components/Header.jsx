@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <h2>Devmountain Eatery</h2>
       <nav>
-        <Link to="/home">
+        <Link to="/">
           <button className={styles.nav_btn}>Home</button>
         </Link>
         <Link to="/newRecipe">

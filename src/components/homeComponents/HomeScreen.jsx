@@ -10,7 +10,7 @@ import RecipeContainer from './RecipeContainer'
 const HomeScreen = () => { 
 
   const [recipes, setRecipes] = useState([])
-const url = 'https://recipes.devmountain.com/recipes'
+const url = 'https://recipes.devmountain.com'
 
   const getRecipes = () => {
     axios.get(`${url}/recipes`)
