@@ -11,9 +11,9 @@ const DetailScreen = () => {
   const { id } = useParams();
 
   const [recipe, setRecipe] = useState({});
-  const url = 'https://recipes.devmoutian.com';
+  const url = 'https://recipes.devmountain.com';
 
-console.log(recipe); //nothing in our obj
+console.log(id); //nothing in our obj
 
 
 
@@ -24,26 +24,26 @@ console.log(recipe); //nothing in our obj
   }, []);
   return (
     <section>
-      <div className={styles.ad_banner}
-      title={recipe.recipe_name}
+      {/* <div className={styles.ad_banner}
+      
       style={{
         background: `linear-gradient(
           190deg,
           rgba(0, 0, 0, 0.8),
           rgba(0, 0, 0, 0.8)),
-          url(${salmon})`,
+          url(${Image.url})`,
         backgroundSize: "cover",
       }}
-    >{recipe.recipe_name}</div>
-      {/* <DetailImage image={recipe.image_url}  /> */}
-     
+    >{recipe.recipe_name}</div> */}
+      <DetailImage image={recipe.image_url} title={recipe.recipe_name}/>
+     <div className={styles.contain}>
       <div className={styles.ingredients_container}>
-        <h2>Recipe</h2>
+        <h3><center>Recipe</center></h3>
         <h4>Prep Time: {recipe.prep_time}</h4>
         <h4>Cook Time: {recipe.cook_time}</h4>
         <h4>Serves: {recipe.serves}</h4>
         <br />
-        <h2>Ingredients</h2>
+        <h3><center>Ingredients</center></h3>
         {recipe.ingredients &&
           recipe.ingredients.map((ing, index) => {
             return (
@@ -54,10 +54,11 @@ console.log(recipe); //nothing in our obj
           })}
       </div>
       <div className={styles.instruction_container}>
-        <h2>Instructions</h2>
+        <h3><center>Instructions</center></h3>
         <p style={{ whiteSpace: "pre-wrap" }}>
           {recipe.instructions && JSON.parse(recipe.instructions)}
         </p>
+      </div>
       </div>
     </section>
   );
