@@ -45,3 +45,15 @@
     padding: 12px;
     border-radius: 3px;
 }
+
+.ad_banner{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: black;
+    background-size: cover;
+}

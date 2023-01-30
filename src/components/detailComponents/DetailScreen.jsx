@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./Details.module.css";
-import DetailImage from "./DetailImage";
-import RecipeCard from "../elements/RecipeCard";
+import DetailImage from "./DetailImage.jsx";
+import salmon from "../../assets/salmon.jpg";
+import NewRecipeScreen from "../newRecipeScreen/NewRecipeScreen";
+// import RecipeCard from "../elements/RecipeCard";
 
 const DetailScreen = () => {
   const { id } = useParams();
 
   const [recipe, setRecipe] = useState({});
-  const url = "https://recipes.devmoutian.com";
+  const url = 'https://recipes.devmoutian.com';
+
+console.log(recipe); //nothing in our obj
+
+
 
   useEffect(() => {
     axios.get(`${url}/recipes/${id}`).then((res) => {
@@ -19,12 +24,24 @@ const DetailScreen = () => {
   }, []);
   return (
     <section>
-      <DetailImage image={recipe.image_url} title={recipe.recipe_name} />
+      <div className={styles.ad_banner}
+      title={recipe.recipe_name}
+      style={{
+        background: `linear-gradient(
+          190deg,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.8)),
+          url(${salmon})`,
+        backgroundSize: "cover",
+      }}
+    >{recipe.recipe_name}</div>
+      {/* <DetailImage image={recipe.image_url}  /> */}
+     
       <div className={styles.ingredients_container}>
         <h2>Recipe</h2>
         <h4>Prep Time: {recipe.prep_time}</h4>
         <h4>Cook Time: {recipe.cook_time}</h4>
-        <h4>Serves: {RecipeCard.serves}</h4>
+        <h4>Serves: {recipe.serves}</h4>
         <br />
         <h2>Ingredients</h2>
         {recipe.ingredients &&

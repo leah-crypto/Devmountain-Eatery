@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import HomeScreen from "./components/homeComponents/HomeScreen";
 import NewRecipeScreen from "./components/newRecipeScreen/NewRecipeScreen";
 import DetailScreen from "./components/detailComponents/DetailScreen";
-import axios from "axios";
+// import axios from "axios";
 
 function App() {
   return (

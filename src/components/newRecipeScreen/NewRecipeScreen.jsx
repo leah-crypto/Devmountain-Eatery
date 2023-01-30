@@ -29,6 +29,15 @@ const NewRecipeScreen = () => {
   const onSubmit = (values) => {
     values.ingredients = ingredients;
     console.log(values);
+
+    axios
+      .post(`https://recipes.devmountain.com/recipes`, values)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const ingredientDisplay = ingredients.map((ing) => {
@@ -41,7 +50,7 @@ const NewRecipeScreen = () => {
 
   return (
     <section>
-      <h3>fdfdsfdsf!</h3>
+      <h3 className={styles.intro}>Tell Us About Your Recipe!</h3>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>

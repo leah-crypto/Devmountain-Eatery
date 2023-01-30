@@ -30,7 +30,7 @@ form {
   }
   
   form input:focus {
-    color: orange;
+    color: #989898;
     /* border: 1px solid var(--color) */
   }
   
@@ -76,4 +76,9 @@ form {
   
   ul {
     width: 50%;
+  }
+
+  .intro{
+    font-size: 64px;
+    color: #da7734
   }
